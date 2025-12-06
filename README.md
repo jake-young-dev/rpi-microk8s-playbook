@@ -1,5 +1,5 @@
 # rpi-microk8s-playbook
-a simple ansible playbook to configure raspberry pis with microk8s based on the [tutorial](https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview) provided by ubuntu
+a simple ansible playbook to configure microk8s on Raspberry Pis running Ubuntu Server
 
 ## Requirements
 Ansible, Python, and the Raspberry Pi imager are required for this playbook
@@ -7,8 +7,8 @@ Ansible, Python, and the Raspberry Pi imager are required for this playbook
 ## Usage
 1. <b>Open the Raspberry Pi imager and insert your SD card</b>
 2. <b>Flash the LTS ubuntu version to your SD card</b> <br />
-The specific release we want is under "Other general purpose OS's" > "Ubuntu" > Ubuntu Server 22.04.5 LTS (64-bit) Server OS with long-term support for RPI zero 2w/3/4/400
-This has only been tested on this specific Ubuntu version, others may be needed for different models.
+The specific release we want is under "Other general purpose OS's" > "Ubuntu" > Ubuntu Server 22.04.5 LTS (64-bit) Server OS with long-term support for RPI zero 2w/3/4/400 <br />
+This has only been tested with the above OS on RPI 3/4, it  make work with others but I cannot guarantee. Submit an issue if you find bugs.
 3. <b>Configure OS </b> <br />
 In the imager preconfigure the Pi's hostname, user/password, wireless/internet, and enable SSH allowing password login
 4. <b>Write OS to SD card</b>
