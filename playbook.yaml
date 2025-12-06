@@ -26,8 +26,3 @@
         name: dev
         groups: microk8s
         append: yes
-
-    - name: Create kube file
-      ansible.builtin.file:
-        path: ~/.kube
-        owner: dev
