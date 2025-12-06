@@ -1,0 +1,22 @@
+- name: Microk8s raspberry pi setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update cmdline file
+      lineinfile:
+        path: /boot/firmware/cmdline.txt
+        regexp: '^(.*)$'
+        line: 'cgroup_enable=memory cgroup_memory=1 \1'
+        backrefs: yes
+
+    - name: Reboot
+      ansible.builtin.reboot:
+
+    - name: Update system
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install Microk8s
+      community.general.snap:
+        name: microk8s
+        classic: yes
