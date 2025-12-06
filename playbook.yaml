@@ -20,3 +20,13 @@
       community.general.snap:
         name: microk8s
         classic: yes
+
+    - name: Add user to microk8s group
+      ansible.builtin.user:
+        groups: microk8s
+        append: yes
+
+    - name: Create kube file
+      ansible.builtin.file:
+        path: ~/.kube
+        owner: dev
