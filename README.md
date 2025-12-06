@@ -7,7 +7,7 @@ a simple ansible playbook to configure microk8s on Raspberry Pis running Ubuntu 
 The specific release we want is under "Other general purpose OS's" > "Ubuntu" > Ubuntu Server 22.04.5 LTS (64-bit) Server OS with long-term support for RPI zero 2w/3/4/400 <br />
 This has only been tested with the above OS on RPI 3/4, it  make work with others but I cannot guarantee. Submit an issue if you find bugs.
 3. <b>Configure OS </b> <br />
-In the imager preconfigure the Pi's hostname, wireless/internet, and enable SSH allowing password. <b>The username and password must be dev/dev</b>
+In the imager preconfigure the Pi's hostname, wireless/internet, user/password, and enable SSH allowing password.
 4. <b>Write OS to SD card</b>
 5. <b>Boot Raspberry Pi</b>
 6. <b>SSH into Pi using hostname and save IP address</b> <br />

@@ -1,8 +1,8 @@
-- name: Microk8s raspberry pi setup
+- name: Raspberry Pi Microk8s configuration
   hosts: all
   become: yes
   tasks:
-    - name: Update cmdline file
+    - name: Update boot files
       lineinfile:
         path: /boot/firmware/cmdline.txt
         regexp: '^(.*)$'
@@ -12,17 +12,17 @@
     - name: Reboot
       ansible.builtin.reboot:
 
-    - name: Update system
+    - name: Update system cache
       ansible.builtin.apt:
         update_cache: yes
 
-    - name: Install Microk8s
+    - name: Install Microk8s with snap
       community.general.snap:
         name: microk8s
         classic: yes
 
     - name: Add user to microk8s group
       ansible.builtin.user:
-        name: dev
+        name: "{{ ansible_user }}"
         groups: microk8s
         append: yes
