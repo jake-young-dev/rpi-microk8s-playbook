@@ -26,3 +26,7 @@
         name: "{{ ansible_user }}"
         groups: microk8s
         append: yes
+
+    - name: Start Microk8s
+      ansible.builtin.shell: |
+        microk8s.start
