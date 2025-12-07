@@ -23,7 +23,7 @@
 
     - name: Add user to microk8s group
       ansible.builtin.user:
-        name: "{{ ansible_user }}"
+        name: '{{ ansible_user }}'
         groups: microk8s
         append: yes
 
